@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>Mountaineers Strength — Block A</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7F4;
+    --ink:#131C18;
+    --ink-soft:#5A6862;
+    --rule:#C9D0CB;
+    --heavy:#16302A;
+    --form:#DCE6E0;
+    --form-line:#7D9A8C;
+    --game:#B3341C;
+    --soccer:#2E5A8C;
+  }
+  html{color-scheme:light}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    padding:26px 30px 30px;
+    max-width:1040px;margin:0 auto;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-color-scheme: dark){
+    html,body{background:var(--paper) !important;color:var(--ink) !important}
+  }
+
+  /* ---- header ---- */
+  header{display:flex;justify-content:space-between;align-items:flex-end;
+    border-bottom:2.5px solid var(--ink);padding-bottom:10px;margin-bottom:4px}
+  h1{font-family:Oswald,sans-serif;font-weight:700;font-size:37px;
+    letter-spacing:.045em;text-transform:uppercase;line-height:.95}
+  h1 span{display:block;font-size:14px;font-weight:500;letter-spacing:.22em;
+    color:var(--ink-soft);margin-bottom:5px}
+  .dates{font-family:Oswald,sans-serif;font-size:15px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-soft);text-align:right;line-height:1.5}
+  .dates b{color:var(--ink);font-weight:600}
+
+  .creed{font-family:Oswald,sans-serif;font-size:14.5px;letter-spacing:.05em;
+    text-transform:uppercase;padding:9px 0 13px;color:var(--ink-soft)}
+  .creed b{color:var(--game);font-weight:600}
+
+  /* ---- legend ---- */
+  .legend{display:flex;gap:10px;margin-bottom:12px}
+  .key{flex:1;display:flex;align-items:center;gap:9px;padding:8px 11px;border:1px solid var(--rule)}
+  .chip{width:26px;height:26px;flex:none}
+  .chip.h{background:var(--heavy)}
+  .chip.f{background:var(--form);border:1.5px solid var(--form-line)}
+  .chip.bar{height:6px;border-radius:1px;align-self:center;border:none}
+  .chip.bar.vb{background:var(--game)}
+  .chip.bar.sc{background:var(--soccer)}
+  .key b{font-family:Oswald,sans-serif;font-size:14px;letter-spacing:.1em;text-transform:uppercase;display:block}
+  .key i{font-style:normal;font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em}
+
+  /* ---- grid ---- */
+  table{width:100%;border-collapse:collapse;table-layout:fixed}
+  thead th{font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-soft);padding:0 0 5px;text-align:left}
+  thead th:first-child{width:52px}
+  tbody th{font-family:Oswald,sans-serif;font-size:19px;font-weight:600;
+    color:var(--rule);text-align:left;vertical-align:middle;border-top:1px solid var(--rule)}
+  td{border:1px solid var(--rule);height:64px;vertical-align:top;padding:5px 6px;position:relative}
+  .dnum{font-family:Oswald,sans-serif;font-size:10.5px;color:var(--ink-soft);letter-spacing:.06em}
+
+  td.heavy{background:var(--heavy);border-color:var(--heavy)}
+  td.heavy .dnum{color:#8FA79C}
+  td.form{background:var(--form)}
+  td.off .dnum{opacity:.45}
+
+  /* game/soccer bars — sit just under the date number, inside the cell */
+  .bars{display:flex;flex-direction:column;gap:2px;margin:3px 0 4px;width:60%}
+  .bar{height:4px;border-radius:1px}
+  .bar.vb{background:var(--game)}
+  .bar.sc{background:var(--soccer)}
+
+  .tag{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.07em;
+    font-size:15px;font-weight:600;line-height:1.1;margin-top:5px;display:block}
+  td.heavy .tag{color:#fff}
+  td.form .tag{color:var(--heavy)}
+
+  .vb-tag{display:block;font-family:Oswald,sans-serif;text-transform:uppercase;
+    letter-spacing:.04em;font-size:13px;font-weight:600;color:var(--game);line-height:1.15}
+  .ball{display:block;font-size:10.5px;letter-spacing:.02em;color:var(--soccer);
+    margin-top:2px;line-height:1.25;font-family:"IBM Plex Sans";font-weight:500}
+  .opp{display:block;font-family:"IBM Plex Sans";font-size:10px;letter-spacing:.01em;
+    color:var(--ink-soft);margin-top:2px;line-height:1.25}
+  .note{position:absolute;bottom:4px;left:6px;font-size:9px;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--ink-soft);font-family:Oswald,sans-serif}
+  td.heavy .note{color:#7E9689}
+
+  /* ---- session cards ---- */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+  .card{border:1px solid var(--rule);padding:12px 14px}
+  .card.dark{background:var(--heavy);border-color:var(--heavy);color:#fff}
+  .card h2{font-family:Oswald,sans-serif;font-size:19px;letter-spacing:.1em;
+    text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;align-items:baseline}
+  .card h2 em{font-style:normal;font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft);font-weight:400}
+  .card.dark h2 em{color:#8FA79C}
+  .card ol{list-style:none;counter-reset:s;margin-top:8px}
+  .card li{counter-increment:s;font-size:11.5px;padding:2.5px 0 2.5px 22px;position:relative;
+    border-bottom:1px solid var(--rule);line-height:1.35}
+  .card.dark li{border-color:#2B463E}
+  .card li:last-child{border-bottom:none}
+  .card li::before{content:counter(s);position:absolute;left:0;top:3.5px;
+    font-family:Oswald,sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:.05em}
+  .card.dark li::before{color:#7E9689}
+  .card li b{font-weight:600}
+  .card li span{color:var(--ink-soft);float:right;font-family:Oswald,sans-serif;
+    font-size:11px;letter-spacing:.05em}
+  .card.dark li span{color:#9DB3A9}
+  .rule-line{margin-top:9px;padding-top:8px;border-top:1.5px solid var(--rule);
+    font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--game)}
+  .card.dark .rule-line{border-color:#2B463E;color:#E8A08D}
+
+  .dissertation{margin-top:16px;padding-top:14px;border-top:1.5px solid var(--rule)}
+  .dissertation h3{font-family:Oswald,sans-serif;font-size:13px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--game);margin-bottom:6px;margin-top:12px}
+  .dissertation p{font-size:11.5px;line-height:1.55;color:var(--ink);max-width:920px}
+  .assumptions{list-style:none}
+  .assumptions li{font-size:11.5px;line-height:1.5;padding:3px 0 3px 16px;position:relative;color:var(--ink)}
+  .assumptions li::before{content:"—";position:absolute;left:0;color:var(--form-line)}
+  .assumptions li b{font-weight:600}
+
+  footer{margin-top:14px;padding-top:9px;border-top:2.5px solid var(--ink);
+    display:flex;justify-content:space-between;font-family:Oswald,sans-serif;
+    font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+
+  @media print{
+    @page{size:letter portrait;margin:.3in}
+    body{padding:0;background:#fff;max-width:none;font-size:13px}
+    h1{font-size:32px}
+    td{height:54px}
+    .card li{padding:2px 0 2px 20px;font-size:10.5px}
+    .dissertation p,.assumptions li{font-size:10px}
+    td.heavy,.card.dark{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+  @media (max-width:720px){
+    body{padding:16px}
+    h1{font-size:26px}
+    .legend{flex-direction:column}
+    .cards{grid-template-columns:1fr}
+    td{height:56px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span>Mount Baker Mountaineers</span>Girls Strength · Block A</h1>
+  <div class="dates">Volleyball In-Season<br><b>Aug 31 — Oct 30, 2026</b></div>
+</header>
+
+<p class="creed">Monday is heavy. Friday is form. <b>Fatigue comes from volume — gains come from intensity.</b></p>
+
+<div class="legend">
+  <div class="key"><div class="chip h"></div><div><b>Heavy Day</b><i>50 min · 6:30–7:20 PM · needs two sleeps clear on both sides</i></div></div>
+  <div class="key"><div class="chip f"></div><div><b>Form Day</b><i>50 min · trims down when it falls the day before a game</i></div></div>
+  <div class="key" style="flex:0 0 190px"><div class="chip bar vb"></div><div><b>🏐 Volleyball</b><i>nothing from us that day</i></div></div>
+  <div class="key" style="flex:0 0 170px"><div class="chip bar sc"></div><div><b>⚽ Soccer</b><i>separate roster</i></div></div>
+</div>
+
+<table>
+<thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
+<tbody>
+
+<tr><th>W1</th>
+  <td class="heavy"><div class="dnum">AUG 31</div><span class="tag">Heavy</span></td>
+  <td class="off"><div class="dnum">SEP 1</div></td>
+  <td class="off"><div class="dnum">2</div></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">3</div><span class="vb-tag">🏐 @ Sultan</span></td>
+  <td class="form"><div class="dnum">4</div><span class="tag">Form</span></td>
+  <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">5</div><span class="ball">⚽ Orcas Isl.</span></td>
+  <td class="off"><div class="dnum">6</div></td>
+</tr>
+
+<tr><th>W2</th>
+  <td class="off"><div class="dnum">SEP 7</div><span class="opp">Labor Day —<br>no school</span></td>
+  <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">8</div><span class="ball">⚽ Sultan</span></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">9</div><span class="vb-tag">🏐 Oak Harbor</span></td>
+  <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">10</div><span class="ball">⚽ Oak Harbor</span></td>
+  <td class="heavy"><div class="dnum">11</div><span class="tag">Heavy</span></td>
+  <td class="off"><div class="dnum">12</div></td>
+  <td class="off"><div class="dnum">13</div></td>
+</tr>
+
+<tr><th>W3</th>
+  <td class="heavy"><div class="dnum">SEP 14</div><span class="tag">Heavy</span></td>
+  <td class="off"><div class="dnum">15</div></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">16</div><span class="vb-tag">🏐 Mount Vernon</span></td>
+  <td class="off"><div class="dnum">17</div></td>
+  <td class="form"><div class="dnum">18</div><span class="tag">Form</span></td>
+  <td class="off"><div class="dnum">19</div></td>
+  <td class="off"><div class="dnum">20</div></td>
+</tr>
+
+<tr><th>W4</th>
+  <td class="heavy"><div class="dnum">SEP 21</div><span class="tag">Heavy</span></td>
+  <td class="off"><div class="dnum">22</div></td>
+  <td class="off"><div class="dnum">23</div></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span></div><div class="dnum">24</div><span class="vb-tag">🏐 Meridian</span><span class="ball">⚽ @ Meridian</span></td>
+  <td class="form"><div class="dnum">25</div><span class="tag">Form</span></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">26</div><span class="vb-tag">🏐 @ Sultan</span><span class="opp">Tourney · 9 AM</span></td>
+  <td class="off"><div class="dnum">27</div></td>
+</tr>
+
+<tr><th>W5</th>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">SEP 28</div><span class="vb-tag">🏐 @ Blaine</span></td>
+  <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">29</div><span class="ball">⚽ Blaine</span></td>
+  <td class="form"><div class="dnum">30</div><span class="tag">Form</span></td>
+  <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">OCT 1</div><span class="ball">⚽ @ Granite Falls</span></td>
+  <td class="heavy"><div class="dnum">2</div><span class="tag">Heavy</span></td>
+  <td class="off"><div class="dnum">3</div></td>
+  <td class="off"><div class="dnum">4</div></td>
+</tr>
+
+<tr><th>W6</th>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">OCT 5</div><span class="vb-tag">🏐 @ Nooksack</span></td>
+  <td class="form"><div class="bars"><span class="bar sc"></span></div><div class="dnum">6</div><span class="tag">Form</span><span class="ball">⚽ Nooksack</span></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">7</div><span class="vb-tag">🏐 Lynden Christian</span></td>
+  <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">8</div><span class="ball">⚽ @ Lyn. Christian</span></td>
+  <td class="heavy"><div class="dnum">9</div><span class="tag">Heavy</span><div class="note">43h — trim a set</div></td>
+  <td class="off"><div class="dnum">10</div></td>
+  <td class="off"><div class="dnum">11</div></td>
+</tr>
+
+<tr><th>W7</th>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">OCT 12</div><span class="vb-tag">🏐 @ Meridian</span></td>
+  <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">13</div><span class="ball">⚽ Meridian</span></td>
+  <td class="heavy"><div class="dnum">14</div><span class="tag">Heavy</span><div class="note">Game Thu — ease last sets</div></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span></div><div class="dnum">15</div><span class="vb-tag">🏐 Blaine</span><span class="ball">⚽ @ Blaine</span></td>
+  <td class="off"><div class="dnum">16</div></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">17</div><span class="vb-tag">🏐 @ Orcas · 1 PM</span></td>
+  <td class="off"><div class="dnum">18</div></td>
+</tr>
+
+<tr><th>W8</th>
+  <td class="heavy"><div class="dnum">OCT 19</div><span class="tag">Heavy</span></td>
+  <td class="off"><div class="dnum">20</div></td>
+  <td class="off"><div class="dnum">21</div></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span></div><div class="dnum">22</div><span class="vb-tag">🏐 Nooksack</span><span class="ball">⚽ @ Nooksack</span></td>
+  <td class="form"><div class="dnum">23</div><span class="tag">Form</span></td>
+  <td class="off"><div class="dnum">24</div></td>
+  <td class="off"><div class="dnum">25</div></td>
+</tr>
+
+<tr><th>W9</th>
+  <td class="form"><div class="dnum">OCT 26</div><span class="tag">Form</span></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span></div><div class="dnum">27</div><span class="vb-tag">🏐 @ Lynden Christian</span><span class="ball">⚽ Lyn. Christian</span></td>
+  <td class="off"><div class="dnum">28</div></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span></div><div class="dnum">29</div><span class="vb-tag">🏐 @ Ferndale</span><span class="ball">⚽ Ferndale</span></td>
+  <td class="off"><div class="dnum">30</div><span class="opp">Districts —<br>taper week</span></td>
+  <td class="off"><div class="dnum">31</div></td>
+  <td class="off"><div class="dnum">NOV 1</div></td>
+</tr>
+
+</tbody>
+</table>
+
+<div class="cards">
+  <div class="card dark">
+    <h2>Heavy Day <em>50 min · 6:30–7:20</em></h2>
+    <ol>
+      <li><b>Step in, step out</b> + mobility <span>5 min</span></li>
+      <li><b>Power clean</b> — build to top <span>4×__</span></li>
+      <li><b>Trap bar deadlift</b> <span>4×__</span></li>
+      <li><b>Chin-up</b> or pull <span>4×__</span></li>
+      <li><b>Bench press</b> or push <span>4×__</span></li>
+      <li><b>Hip strength</b> <span>3 sets</span></li>
+      <li><b>Ab strength</b> <span>3 sets</span></li>
+      <li><b>Calves</b> — a lot <span>4 sets</span></li>
+      <li><b>Posterior delts</b> <span>3 sets</span></li>
+    </ol>
+    <div class="rule-line">First set is the warm-up. Always.</div>
+  </div>
+
+  <div class="card">
+    <h2>Form Day <em>50 min · trims day-before-game</em></h2>
+    <ol>
+      <li><b>Step in, step out</b> + pogo hops <span>3 min</span></li>
+      <li><b>Power clean</b> — speed, crisp <span>3×__</span></li>
+      <li><b>Jump</b> — CMJ or low box <span>3 sets</span></li>
+      <li><b>Squat</b> or trap bar — light, fast <span>3×__</span></li>
+      <li><b>Hip strength</b> <span>2 sets</span></li>
+      <li><b>Ab strength</b> <span>2 sets</span></li>
+      <li><b>Calves</b> <span>3 sets</span></li>
+      <li><b>Posterior delts</b> <span>2 sets</span></li>
+    </ol>
+    <div class="rule-line">Day before a game: bar work + jumps only, out in 20.</div>
+  </div>
+</div>
+
+<div class="dissertation">
+  <p>Without question, you can get stronger during the season, and this is designed for making every workout count. Everyone on this team is at a point where showing up on lift days is not a question — the commitment is clearly already there. Heavy days are tight sessions focused on strength and power development. Form days are neurologically focused — form and recovery movements that keep the system sharp without adding fatigue. Fatigue is a function of volume. Adaptation is a function of intensity. Two well-run sessions, both real, both purposeful, will move the needle all season long.</p>
+
+  <h3>Critical assumptions — recovery is not optional</h3>
+  <ul class="assumptions">
+    <li><b>Sleep.</b> Lights out by 8 PM, phone away, fall asleep in short order. Pack your bag the night before — a clean morning starts the night before.</li>
+    <li><b>Wake up right.</b> Get light in your eyes early. It resets the clock for the next night.</li>
+    <li><b>Eat and drink water.</b> All day, not just around lifts.</li>
+    <li><b>Creatine.</b> Start at 5 g, mixed into your shake.</li>
+    <li><b>Post-workout shake, every time.</b> 25–35 g protein — about a scoop and a half — plus berries for a little glycogen back. Adjust up as it feels right and your stomach agrees.</li>
+  </ul>
+</div>
+
+<footer>
+  <span>Power clean every week — both days, no exceptions</span>
+  <span>Show up · Sleep · Be sharp</span>
+</footer>
+
+</body>
+</html>
