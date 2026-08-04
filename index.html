@@ -18,6 +18,7 @@
     --form-line:#7D9A8C;
     --game:#B3341C;
     --soccer:#2E5A8C;
+    --xc:#9C7A1E;
   }
   html{color-scheme:light}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -79,6 +80,7 @@
   .bar{height:4px;border-radius:1px}
   .bar.vb{background:var(--game)}
   .bar.sc{background:var(--soccer)}
+  .bar.xc{background:var(--xc)}
 
   .tag{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.07em;
     font-size:15px;font-weight:600;line-height:1.1;margin-top:5px;display:block}
@@ -88,6 +90,8 @@
   .vb-tag{display:block;font-family:Oswald,sans-serif;text-transform:uppercase;
     letter-spacing:.04em;font-size:13px;font-weight:600;color:var(--game);line-height:1.15}
   .ball{display:block;font-size:10.5px;letter-spacing:.02em;color:var(--soccer);
+    margin-top:2px;line-height:1.25;font-family:"IBM Plex Sans";font-weight:500}
+  .run{display:block;font-size:10.5px;letter-spacing:.02em;color:var(--xc);
     margin-top:2px;line-height:1.25;font-family:"IBM Plex Sans";font-weight:500}
   .opp{display:block;font-family:"IBM Plex Sans";font-size:10px;letter-spacing:.01em;
     color:var(--ink-soft);margin-top:2px;line-height:1.25}
@@ -164,6 +168,7 @@
   <div class="key"><div class="chip f"></div><div><b>Form Day</b><i>50 min · trims down when it falls the day before a game</i></div></div>
   <div class="key" style="flex:0 0 190px"><div class="chip bar vb"></div><div><b>🏐 Volleyball</b><i>nothing from us that day</i></div></div>
   <div class="key" style="flex:0 0 170px"><div class="chip bar sc"></div><div><b>⚽ Soccer</b><i>separate roster</i></div></div>
+  <div class="key" style="flex:0 0 170px"><div class="chip bar xc"></div><div><b>🏃 XC</b><i>separate roster</i></div></div>
 </div>
 
 <table>
@@ -186,7 +191,7 @@
   <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">9</div><span class="vb-tag">🏐 Oak Harbor</span></td>
   <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">10</div><span class="ball">⚽ Oak Harbor</span></td>
   <td class="heavy"><div class="dnum">11</div><span class="tag">Heavy</span></td>
-  <td class="off"><div class="dnum">12</div></td>
+  <td class="off"><div class="bars"><span class="bar xc"></span></div><div class="dnum">12</div><span class="run">🏃 GearUp Preview</span></td>
   <td class="off"><div class="dnum">13</div></td>
 </tr>
 
@@ -196,14 +201,14 @@
   <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">16</div><span class="vb-tag">🏐 Mount Vernon</span></td>
   <td class="off"><div class="dnum">17</div></td>
   <td class="form"><div class="dnum">18</div><span class="tag">Form</span></td>
-  <td class="off"><div class="dnum">19</div></td>
+  <td class="off"><div class="bars"><span class="bar xc"></span></div><div class="dnum">19</div><span class="run">🏃 S. Whidbey Inv.</span></td>
   <td class="off"><div class="dnum">20</div></td>
 </tr>
 
 <tr><th>W4</th>
   <td class="heavy"><div class="dnum">SEP 21</div><span class="tag">Heavy</span></td>
   <td class="off"><div class="dnum">22</div></td>
-  <td class="off"><div class="dnum">23</div></td>
+  <td class="off"><div class="bars"><span class="bar xc"></span></div><div class="dnum">23</div><span class="run">🏃 @ Sehome</span></td>
   <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span></div><div class="dnum">24</div><span class="vb-tag">🏐 Meridian</span><span class="ball">⚽ @ Meridian</span></td>
   <td class="form"><div class="dnum">25</div><span class="tag">Form</span></td>
   <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">26</div><span class="vb-tag">🏐 @ Sultan</span><span class="opp">Tourney · 9 AM</span></td>
@@ -213,10 +218,10 @@
 <tr><th>W5</th>
   <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">SEP 28</div><span class="vb-tag">🏐 @ Blaine</span></td>
   <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">29</div><span class="ball">⚽ Blaine</span></td>
-  <td class="form"><div class="dnum">30</div><span class="tag">Form</span></td>
+  <td class="form"><div class="bars"><span class="bar xc"></span></div><div class="dnum">30</div><span class="tag">Form</span><span class="run">🏃 Home Meet</span></td>
   <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">OCT 1</div><span class="ball">⚽ @ Granite Falls</span></td>
   <td class="heavy"><div class="dnum">2</div><span class="tag">Heavy</span></td>
-  <td class="off"><div class="dnum">3</div></td>
+  <td class="off"><div class="bars"><span class="bar xc"></span></div><div class="dnum">3</div><span class="run">🏃 Nike Twilight</span></td>
   <td class="off"><div class="dnum">4</div></td>
 </tr>
 
@@ -224,9 +229,9 @@
   <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">OCT 5</div><span class="vb-tag">🏐 @ Nooksack</span></td>
   <td class="form"><div class="bars"><span class="bar sc"></span></div><div class="dnum">6</div><span class="tag">Form</span><span class="ball">⚽ Nooksack</span></td>
   <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">7</div><span class="vb-tag">🏐 Lynden Christian</span></td>
-  <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">8</div><span class="ball">⚽ @ Lyn. Christian</span></td>
+  <td class="off"><div class="bars"><span class="bar sc"></span><span class="bar xc"></span></div><div class="dnum">8</div><span class="ball">⚽ @ Lyn. Christian</span><span class="run">🏃 Live Nation Inv.</span></td>
   <td class="heavy"><div class="dnum">9</div><span class="tag">Heavy</span><div class="note">43h — trim a set</div></td>
-  <td class="off"><div class="dnum">10</div></td>
+  <td class="off"><div class="bars"><span class="bar xc"></span></div><div class="dnum">10</div><span class="run">🏃 Hole in Wall</span></td>
   <td class="off"><div class="dnum">11</div></td>
 </tr>
 
@@ -234,7 +239,7 @@
   <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">OCT 12</div><span class="vb-tag">🏐 @ Meridian</span></td>
   <td class="off"><div class="bars"><span class="bar sc"></span></div><div class="dnum">13</div><span class="ball">⚽ Meridian</span></td>
   <td class="heavy"><div class="dnum">14</div><span class="tag">Heavy</span><div class="note">Game Thu — ease last sets</div></td>
-  <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span></div><div class="dnum">15</div><span class="vb-tag">🏐 Blaine</span><span class="ball">⚽ @ Blaine</span></td>
+  <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span><span class="bar xc"></span></div><div class="dnum">15</div><span class="vb-tag">🏐 Blaine</span><span class="ball">⚽ @ Blaine</span><span class="run">🏃 Lake Lap Inv.</span></td>
   <td class="off"><div class="dnum">16</div></td>
   <td class="off"><div class="bars"><span class="bar vb"></span></div><div class="dnum">17</div><span class="vb-tag">🏐 @ Orcas · 1 PM</span></td>
   <td class="off"><div class="dnum">18</div></td>
@@ -243,7 +248,7 @@
 <tr><th>W8</th>
   <td class="heavy"><div class="dnum">OCT 19</div><span class="tag">Heavy</span></td>
   <td class="off"><div class="dnum">20</div></td>
-  <td class="off"><div class="dnum">21</div></td>
+  <td class="off"><div class="bars"><span class="bar xc"></span></div><div class="dnum">21</div><span class="run">🏃 NWC Champs</span></td>
   <td class="off"><div class="bars"><span class="bar vb"></span><span class="bar sc"></span></div><div class="dnum">22</div><span class="vb-tag">🏐 Nooksack</span><span class="ball">⚽ @ Nooksack</span></td>
   <td class="form"><div class="dnum">23</div><span class="tag">Form</span></td>
   <td class="off"><div class="dnum">24</div></td>
