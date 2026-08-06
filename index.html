@@ -48,6 +48,23 @@
     text-transform:uppercase;padding:9px 0 13px;color:var(--ink-soft)}
   .creed b{color:var(--game);font-weight:600}
 
+  /* ---- summer wrap-up mini calendar ---- */
+  .mini-cal{margin-top:14px;padding:12px 14px;border:1px solid var(--rule);background:#fff}
+  .mini-cal h2{font-family:Oswald,sans-serif;font-size:15px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+  .mini-sub{font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em;margin:2px 0 8px}
+  .mini-table{width:100%;border-collapse:collapse}
+  .mini-table tr{border-top:1px solid var(--rule)}
+  .mini-table tr:first-child{border-top:none}
+  .mini-table th{font-family:Oswald,sans-serif;font-size:10.5px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--form-line);
+    text-align:left;vertical-align:top;padding:4px 8px 4px 0;width:44px;white-space:nowrap}
+  .mini-table td{font-size:11px;color:var(--ink);padding:4px 0;line-height:1.4}
+
+  .section-label{font-family:Oswald,sans-serif;font-size:13px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--game);
+    margin-top:18px;padding-top:10px;border-top:2px solid var(--ink)}
+
   /* ---- legend ---- */
   .legend{display:flex;gap:10px;margin-bottom:12px}
   .key{flex:1;display:flex;align-items:center;gap:9px;padding:8px 11px;border:1px solid var(--rule)}
@@ -148,7 +165,12 @@
   @media (max-width:720px){
     body{padding:16px}
     h1{font-size:26px}
-    .legend{flex-direction:column}
+    .legend{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+    .key{flex:none !important;padding:6px 8px;gap:6px}
+    .key b{font-size:11px}
+    .key i{font-size:8.5px;line-height:1.2}
+    .chip{width:18px;height:18px}
+    .chip.bar{height:4px}
     .cards{grid-template-columns:1fr}
     td{height:56px}
   }
@@ -158,8 +180,24 @@
 
 <header>
   <h1><span>Mount Baker Mountaineers</span>Girls Strength · Block A</h1>
-  <div class="dates">Volleyball In-Season<br><b>Aug 31 — Oct 30, 2026</b></div>
+  <div class="dates">Full Sports In-Season<br><b>Aug 31 — Oct 30, 2026</b></div>
 </header>
+
+<div class="mini-cal">
+  <h2>Finishing Up Summer 2026</h2>
+  <div class="mini-sub">Aug 9 – Aug 28 · Weeks 8–9, then a rest week before Block A opens</div>
+  <table class="mini-table">
+    <tr><th>Wk 8</th><td><b>Mon 8/10</b> — 8:40–9:00 Speed · 9:00–10:00 Heavy · 10:00–11:00 Weight Room Clean</td></tr>
+    <tr><td></td><td><b>Wed 8/12</b> — 8:40–9:00 Speed · 9:00–10:00 Heavy</td></tr>
+    <tr><td></td><td><b>Fri 8/14</b> — 8:40–9:00 Speed · 9:00–10:00 Heavy</td></tr>
+    <tr><th>Wk 9</th><td><b>Mon 8/17</b> — 8:40–9:00 Speed · 9:00–10:00 Heavy</td></tr>
+    <tr><td></td><td><b>Wed 8/19</b> — 8:40–9:00 Speed · 9:00–10:00 Heavy</td></tr>
+    <tr><td></td><td><b>Fri 8/21</b> — 8:40–9:00 Speed · 9:00–10:00 Heavy</td></tr>
+    <tr><th>Wk 10</th><td><b>Mon 8/24 – Fri 8/28</b> — Rest. Off all week.</td></tr>
+  </table>
+</div>
+
+<h2 class="section-label">Fall Training Schedule</h2>
 
 <p class="creed">Monday is heavy. Friday is form. <b>Fatigue comes from volume — gains come from intensity.</b></p>
 
