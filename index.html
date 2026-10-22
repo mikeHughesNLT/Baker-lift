@@ -163,8 +163,13 @@
 
   /* ---- basketball section (Block C draft options) ---- */
   .bb-lbl{color:var(--bb)}
+  table.bb-cal td{height:82px}
   .bb-intro{font-size:11.5px;line-height:1.55;color:var(--ink);max-width:920px;margin:4px 0 12px}
   .bb-intro b{font-weight:600}
+  .card p.def-text{font-size:11.5px;line-height:1.55;margin-top:8px}
+  .card p.def-text b{font-weight:600}
+  .card.dark p.def-text{color:#DCE6E0}
+  .card.dark p.def-text b{color:#fff}
   .opt-label{font-family:Oswald,sans-serif;font-size:16px;font-weight:600;
     letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
     margin-top:16px;padding-top:10px;border-top:1.5px solid var(--rule)}
@@ -179,6 +184,7 @@
     body{padding:0;background:#fff;max-width:none;font-size:13px}
     h1{font-size:32px}
     td{height:54px}
+    table.bb-cal td{height:66px}
     .card li{padding:2px 0 2px 20px;font-size:10.5px}
     .dissertation p,.assumptions li{font-size:10px}
     td.heavy,.card.dark{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -194,6 +200,7 @@
     .chip.bar{height:4px}
     .cards{grid-template-columns:1fr}
     td{height:56px}
+    table.bb-cal td{height:74px}
   }
 </style>
 </head>
@@ -375,27 +382,41 @@
 
 <h2 class="section-label bb-lbl">Block C — Basketball In-Season · Nov 30 – Feb 5 · Two Draft Options</h2>
 
-<p class="creed">Heavy wants ~72 hours before tip-off. Light days are recovery — small muscle groups, big payoff. <b>Day after a game? We can lift.</b></p>
+<p class="creed">Heavy days want ~72 hours before tip-off — major muscle groups, compound lifts. Rapid recovery days flush and prime. <b>Day after a game? We can lift.</b></p>
 
 <p class="bb-intro"><b>Non-basketball girls lift full volume on every heavy day</b> — they aren't game-gated. The trim notes on this calendar apply to basketball players only. ◎ = circled on the schedule.</p>
 
 <div class="legend">
-  <div class="key"><div class="chip h"></div><div><b>Heavy Day</b><i>50 min · wants ~72h before a game</i></div></div>
-  <div class="key"><div class="chip f"></div><div><b>Light Day</b><i>20–30 min · recovery — hips, core, calves, delts</i></div></div>
+  <div class="key"><div class="chip h"></div><div><b>Heavy Day</b><i>50 min · wants ~72h before a game · major muscle groups</i></div></div>
+  <div class="key"><div class="chip f"></div><div><b>Rapid Recovery</b><i>50 min · flush + prime — smaller muscle groups</i></div></div>
   <div class="key" style="flex:0 0 190px"><div class="chip bar bb"></div><div><b>🏀 Basketball</b><i>nothing from us that day</i></div></div>
+</div>
+
+<div class="cards">
+  <div class="card dark">
+    <h2>Heavy Day <em>50 min · wants 72h before a game</em></h2>
+    <p class="def-text">The honest strength stimulus — <b>major muscle groups, compound movements:</b> Bulgarian split squats, squats, heavy cleans, heavy hex bar lifts, plus a high volume of push and pull — <b>bench press and pull-ups</b>. This is the day that needs the two-plus nights of sleep on the far side; that's why every heavy on this calendar is placed against the game schedule first.</p>
+    <div class="rule-line">Fatigue comes from volume — gains come from intensity.</div>
+  </div>
+
+  <div class="card">
+    <h2>Rapid Recovery <em>full 50 min</em></h2>
+    <p class="def-text">A real session, not a day off — the same 50 minutes, pointed the other direction. <b>Smaller muscle groups, the important stuff:</b> hips, core, calves, posterior delts, mobility, and low-level jump work to flush soreness and keep the spring. The goal is simple — <b>recover faster between games</b>. When it lands the day before a game, it's the primer: same 50 minutes, same purpose.</p>
+    <div class="rule-line">Recover faster. That's the whole job.</div>
+  </div>
 </div>
 
 <h3 class="opt-label">Option A — Weekdays Only <span>“53 hours is what we live with” — Monday heavy, trim a set before Wednesday games</span></h3>
 
-<table>
+<table class="bb-cal">
 <thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
 <tbody>
 
 <tr><th>W1</th>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">NOV 30</div><span class="bb-tag">🏀 @ Friday Harbor</span></td>
-  <td class="form"><div class="dnum">DEC 1</div><span class="tag">Light</span><div class="note">Flush after opener</div></td>
+  <td class="form"><div class="dnum">DEC 1</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush after opener</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">2</div><span class="bb-tag">🏀 @ Sultan</span></td>
-  <td class="form"><div class="dnum">3</div><span class="tag">Light</span><div class="note">~48h to Sat game</div></td>
+  <td class="form"><div class="dnum">3</div><span class="tag">Rapid<br>Recovery</span><div class="note">~48h to Sat game</div></td>
   <td class="off"><div class="dnum">4</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">5</div><span class="bb-tag">🏀 Orcas Island</span></td>
   <td class="off"><div class="dnum">6</div></td>
@@ -403,9 +424,9 @@
 
 <tr><th>W2</th>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">DEC 7</div><span class="bb-tag">🏀 @ Bellingham</span></td>
-  <td class="form"><div class="dnum">8</div><span class="tag">Light</span><div class="note">Flush</div></td>
+  <td class="form"><div class="dnum">8</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">9</div><span class="bb-tag">🏀 MV Christian</span></td>
-  <td class="form"><div class="dnum">10</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">10</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">11</div><span class="bb-tag">🏀 Meridian</span></td>
   <td class="off"><div class="dnum">12</div></td>
   <td class="off"><div class="dnum">13</div></td>
@@ -415,14 +436,14 @@
   <td class="heavy"><div class="dnum">DEC 14</div><span class="tag">Heavy</span><div class="note">53h — trim a set</div></td>
   <td class="off"><div class="dnum">15</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">16</div><span class="bb-tag">🏀 @ Blaine</span></td>
-  <td class="form"><div class="dnum">17</div><span class="tag">Light</span><div class="note">Flush · 48h to Sat</div></td>
+  <td class="form"><div class="dnum">17</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush · 48h to Sat</div></td>
   <td class="off"><div class="dnum">18</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">19</div><span class="bb-tag">🏀 Oak Harbor</span></td>
   <td class="off"><div class="dnum">20</div></td>
 </tr>
 
 <tr><th>W4</th>
-  <td class="form"><div class="dnum">DEC 21</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">DEC 21</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">22</div><span class="bb-tag">🏀 @ Ferndale</span></td>
   <td class="heavy"><div class="dnum">23</div><span class="tag">Heavy</span><div class="note">✓ 5 days to tourney<br>day after game — OK</div></td>
   <td class="off"><div class="dnum">24</div><span class="opp">Holiday</span></td>
@@ -445,7 +466,7 @@
   <td class="heavy"><div class="dnum">JAN 4</div><span class="tag">Heavy</span><div class="note">53h — trim a set<br>first week back</div></td>
   <td class="off"><div class="dnum">5</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">6</div><span class="bb-tag">🏀 @ NV ◎</span></td>
-  <td class="form"><div class="dnum">7</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">7</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">8</div><span class="bb-tag">🏀 Mount Vernon</span></td>
   <td class="off"><div class="dnum">9</div></td>
   <td class="off"><div class="dnum">10</div></td>
@@ -455,7 +476,7 @@
   <td class="heavy"><div class="dnum">JAN 11</div><span class="tag">Heavy</span><div class="note">✓ ~96h — full volume<br>⭐ one-game week</div></td>
   <td class="off"><div class="dnum">12</div></td>
   <td class="off"><div class="dnum">13</div></td>
-  <td class="form"><div class="dnum">14</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">14</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">15</div><span class="bb-tag">🏀 Sedro</span></td>
   <td class="off"><div class="dnum">16</div></td>
   <td class="off"><div class="dnum">17</div></td>
@@ -465,18 +486,18 @@
   <td class="heavy"><div class="dnum">JAN 18</div><span class="tag">Heavy</span><div class="note">53h — trim a set<br>MLK — morning lift</div></td>
   <td class="off"><div class="dnum">19</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">20</div><span class="bb-tag">🏀 Lynden Christian</span></td>
-  <td class="form"><div class="dnum">21</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">21</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">22</div><span class="bb-tag">🏀 @ Meridian</span></td>
   <td class="off"><div class="dnum">23</div></td>
   <td class="off"><div class="dnum">24</div></td>
 </tr>
 
 <tr><th>W9</th>
-  <td class="form"><div class="dnum">JAN 25</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">JAN 25</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">26</div><span class="bb-tag">🏀 Blaine</span></td>
-  <td class="form"><div class="dnum">27</div><span class="tag">Light</span><div class="note">Flush between games</div></td>
+  <td class="form"><div class="dnum">27</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush between games</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">28</div><span class="bb-tag">🏀 @ NV ◎</span></td>
-  <td class="form"><div class="dnum">29</div><span class="tag">Light</span><div class="note">Recovery after NV</div></td>
+  <td class="form"><div class="dnum">29</div><span class="tag">Rapid<br>Recovery</span><div class="note">Recovery after NV</div></td>
   <td class="off"><div class="dnum">30</div></td>
   <td class="off"><div class="dnum">31</div></td>
 </tr>
@@ -485,7 +506,7 @@
   <td class="heavy"><div class="dnum">FEB 1</div><span class="tag">Heavy</span><div class="note">✓ ~96h — full volume</div></td>
   <td class="off"><div class="dnum">2</div></td>
   <td class="off"><div class="dnum">3</div></td>
-  <td class="form"><div class="dnum">4</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">4</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">5</div><span class="bb-tag">🏀 @ Lyn. Christian</span><div class="note">Rest of Feb TBD</div></td>
   <td class="off"><div class="dnum">6</div></td>
   <td class="off"><div class="dnum">7</div></td>
@@ -496,15 +517,15 @@
 
 <h3 class="opt-label">Option B — Saturdays Included <span>4–5 Saturday mornings buys clean 72h+ windows — differences from A in bold notes</span></h3>
 
-<table>
+<table class="bb-cal">
 <thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
 <tbody>
 
 <tr><th>W1</th>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">NOV 30</div><span class="bb-tag">🏀 @ Friday Harbor</span></td>
-  <td class="form"><div class="dnum">DEC 1</div><span class="tag">Light</span><div class="note">Flush after opener</div></td>
+  <td class="form"><div class="dnum">DEC 1</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush after opener</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">2</div><span class="bb-tag">🏀 @ Sultan</span></td>
-  <td class="form"><div class="dnum">3</div><span class="tag">Light</span><div class="note">~48h to Sat game</div></td>
+  <td class="form"><div class="dnum">3</div><span class="tag">Rapid<br>Recovery</span><div class="note">~48h to Sat game</div></td>
   <td class="off"><div class="dnum">4</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">5</div><span class="bb-tag">🏀 Orcas Island</span></td>
   <td class="off"><div class="dnum">6</div></td>
@@ -512,9 +533,9 @@
 
 <tr><th>W2</th>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">DEC 7</div><span class="bb-tag">🏀 @ Bellingham</span></td>
-  <td class="form"><div class="dnum">8</div><span class="tag">Light</span><div class="note">Flush</div></td>
+  <td class="form"><div class="dnum">8</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">9</div><span class="bb-tag">🏀 MV Christian</span></td>
-  <td class="form"><div class="dnum">10</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">10</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">11</div><span class="bb-tag">🏀 Meridian</span></td>
   <td class="heavy"><div class="dnum">12</div><span class="tag">Heavy</span><div class="note">✓ 4.5 days to Wed<br>day after game — OK<br><b>NEW vs A</b></div></td>
   <td class="off"><div class="dnum">13</div></td>
@@ -524,19 +545,19 @@
   <td class="heavy"><div class="dnum">DEC 14</div><span class="tag">Heavy</span><div class="note">53h — trim a set</div></td>
   <td class="off"><div class="dnum">15</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">16</div><span class="bb-tag">🏀 @ Blaine</span></td>
-  <td class="form"><div class="dnum">17</div><span class="tag">Light</span><div class="note">Flush · 48h to Sat</div></td>
+  <td class="form"><div class="dnum">17</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush · 48h to Sat</div></td>
   <td class="off"><div class="dnum">18</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">19</div><span class="bb-tag">🏀 Oak Harbor</span></td>
   <td class="off"><div class="dnum">20</div></td>
 </tr>
 
 <tr><th>W4</th>
-  <td class="form"><div class="dnum">DEC 21</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">DEC 21</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">22</div><span class="bb-tag">🏀 @ Ferndale</span></td>
   <td class="heavy"><div class="dnum">23</div><span class="tag">Heavy</span><div class="note">✓ 5 days to tourney<br>day after game — OK</div></td>
   <td class="off"><div class="dnum">24</div><span class="opp">Holiday</span></td>
   <td class="off"><div class="dnum">25</div><span class="opp">Holiday</span></td>
-  <td class="form"><div class="dnum">26</div><span class="tag">Light</span><div class="note">Mobility — optional<br><b>NEW vs A</b></div></td>
+  <td class="form"><div class="dnum">26</div><span class="tag">Rapid<br>Recovery</span><div class="note">Mobility — optional<br><b>NEW vs A</b></div></td>
   <td class="off"><div class="dnum">27</div></td>
 </tr>
 
@@ -554,9 +575,9 @@
   <td class="off"><div class="dnum">JAN 4</div><span class="opp">Heavy moved to<br>Sat Jan 2 <b>(B)</b></span></td>
   <td class="off"><div class="dnum">5</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">6</div><span class="bb-tag">🏀 @ NV ◎</span></td>
-  <td class="form"><div class="dnum">7</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">7</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">8</div><span class="bb-tag">🏀 Mount Vernon</span></td>
-  <td class="form"><div class="dnum">9</div><span class="tag">Light</span><div class="note">Flush<br><b>NEW vs A</b></div></td>
+  <td class="form"><div class="dnum">9</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush<br><b>NEW vs A</b></div></td>
   <td class="off"><div class="dnum">10</div></td>
 </tr>
 
@@ -564,7 +585,7 @@
   <td class="heavy"><div class="dnum">JAN 11</div><span class="tag">Heavy</span><div class="note">✓ ~96h — full volume<br>⭐ one-game week</div></td>
   <td class="off"><div class="dnum">12</div></td>
   <td class="off"><div class="dnum">13</div></td>
-  <td class="form"><div class="dnum">14</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">14</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">15</div><span class="bb-tag">🏀 Sedro</span></td>
   <td class="heavy"><div class="dnum">16</div><span class="tag">Heavy</span><div class="note">✓ ~76h to Wed LC<br>day after game — OK<br><b>NEW vs A</b></div></td>
   <td class="off"><div class="dnum">17</div></td>
@@ -574,18 +595,18 @@
   <td class="off"><div class="dnum">JAN 18</div><span class="opp">MLK — no school<br>heavy covered by<br>Sat 16 + Sat 23 <b>(B)</b></span></td>
   <td class="off"><div class="dnum">19</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">20</div><span class="bb-tag">🏀 Lynden Christian</span></td>
-  <td class="form"><div class="dnum">21</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">21</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">22</div><span class="bb-tag">🏀 @ Meridian</span></td>
   <td class="heavy"><div class="dnum">23</div><span class="tag">Heavy</span><div class="note">✓ ~75h to Tue Blaine<br><b>NEW vs A</b></div></td>
   <td class="off"><div class="dnum">24</div></td>
 </tr>
 
 <tr><th>W9</th>
-  <td class="form"><div class="dnum">JAN 25</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">JAN 25</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">26</div><span class="bb-tag">🏀 Blaine</span></td>
-  <td class="form"><div class="dnum">27</div><span class="tag">Light</span><div class="note">Flush between games</div></td>
+  <td class="form"><div class="dnum">27</div><span class="tag">Rapid<br>Recovery</span><div class="note">Flush between games</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">28</div><span class="bb-tag">🏀 @ NV ◎</span></td>
-  <td class="form"><div class="dnum">29</div><span class="tag">Light</span><div class="note">Recovery after NV</div></td>
+  <td class="form"><div class="dnum">29</div><span class="tag">Rapid<br>Recovery</span><div class="note">Recovery after NV</div></td>
   <td class="off"><div class="dnum">30</div></td>
   <td class="off"><div class="dnum">31</div></td>
 </tr>
@@ -594,7 +615,7 @@
   <td class="heavy"><div class="dnum">FEB 1</div><span class="tag">Heavy</span><div class="note">✓ ~96h — full volume</div></td>
   <td class="off"><div class="dnum">2</div></td>
   <td class="off"><div class="dnum">3</div></td>
-  <td class="form"><div class="dnum">4</div><span class="tag">Light</span><div class="note">Primer — trim</div></td>
+  <td class="form"><div class="dnum">4</div><span class="tag">Rapid<br>Recovery</span><div class="note">Primer — game tomorrow</div></td>
   <td class="off"><div class="bars"><span class="bar bb"></span></div><div class="dnum">5</div><span class="bb-tag">🏀 @ Lyn. Christian</span><div class="note">Rest of Feb TBD</div></td>
   <td class="off"><div class="dnum">6</div></td>
   <td class="off"><div class="dnum">7</div></td>
